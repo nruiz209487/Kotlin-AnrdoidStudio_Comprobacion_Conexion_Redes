@@ -30,7 +30,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.example.comprobacionformasdecominicacion.ui.theme.ComprobacionFormasDeCominicacionTheme
 /**
- * 
+ * Main que contiene la vista mainpage
  */
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -50,7 +50,7 @@ class MainActivity : ComponentActivity() {
 }
 
 /**
- * 
+ * pagina principal contiene una caja con u row de cajas que cambian e color dependiendo de el res de lasfunciones
  */
 @Composable
 fun MainPage(modifier: Modifier = Modifier, context  :Context) {
@@ -141,14 +141,14 @@ fun MainPage(modifier: Modifier = Modifier, context  :Context) {
 }
 
 /**
- * 
+ * funcion de tipo booleano que comprueba si el wifi esta activo
  */
 fun wifiActive(context: Context): Boolean {
     val wifiManager = context.getSystemService(Context.WIFI_SERVICE) as WifiManager
     return wifiManager.isWifiEnabled
 }
 /**
- * 
+ * funcion de tipo booleano que comprueba si el bluetooth esta activo
  */
 fun bluetoothActive(context: Context): Boolean {
     val bluetoothManager = context.getSystemService(Context.BLUETOOTH_SERVICE) as BluetoothManager
@@ -156,14 +156,14 @@ fun bluetoothActive(context: Context): Boolean {
     return bluetoothAdapter != null && bluetoothAdapter.isEnabled
 }
 /**
- * 
+ * funcion de tipo booleano que comprueba si el nfc esta activo
  */
 fun nfcActive(context: Context): Boolean {
     val nfcAdapter: NfcAdapter? = NfcAdapter.getDefaultAdapter(context)
     return nfcAdapter != null && nfcAdapter.isEnabled
 }
 /**
- * 
+ * funcion de tipo booleano que comprueba si los datos esta activo
  */
 fun mobileActive(context: Context): Boolean {
     val connectivityManager = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
@@ -172,7 +172,7 @@ fun mobileActive(context: Context): Boolean {
     return networkCapabilities.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR)
 }
 /**
- * 
+ * funcion de tipo booleano que comprueba si el gpsActive esta activo
  */
 fun gpsActive(context: Context): Boolean {
     val locationManager = context.getSystemService(Context.LOCATION_SERVICE) as LocationManager
