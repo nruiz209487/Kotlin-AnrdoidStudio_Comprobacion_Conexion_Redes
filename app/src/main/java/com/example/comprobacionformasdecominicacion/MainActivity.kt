@@ -29,7 +29,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.example.comprobacionformasdecominicacion.ui.theme.ComprobacionFormasDeCominicacionTheme
-
+/**
+ * 
+ */
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -47,7 +49,9 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-
+/**
+ * 
+ */
 @Composable
 fun MainPage(modifier: Modifier = Modifier, context  :Context) {
     Box(
@@ -136,30 +140,40 @@ fun MainPage(modifier: Modifier = Modifier, context  :Context) {
 
 }
 
-
+/**
+ * 
+ */
 fun wifiActive(context: Context): Boolean {
     val wifiManager = context.getSystemService(Context.WIFI_SERVICE) as WifiManager
     return wifiManager.isWifiEnabled
 }
-
+/**
+ * 
+ */
 fun bluetoothActive(context: Context): Boolean {
     val bluetoothManager = context.getSystemService(Context.BLUETOOTH_SERVICE) as BluetoothManager
     val bluetoothAdapter: BluetoothAdapter? = bluetoothManager.adapter
     return bluetoothAdapter != null && bluetoothAdapter.isEnabled
 }
-
+/**
+ * 
+ */
 fun nfcActive(context: Context): Boolean {
     val nfcAdapter: NfcAdapter? = NfcAdapter.getDefaultAdapter(context)
     return nfcAdapter != null && nfcAdapter.isEnabled
 }
-
+/**
+ * 
+ */
 fun mobileActive(context: Context): Boolean {
     val connectivityManager = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
     val activeNetwork = connectivityManager.activeNetwork ?: return false
     val networkCapabilities = connectivityManager.getNetworkCapabilities(activeNetwork) ?: return false
     return networkCapabilities.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR)
 }
-
+/**
+ * 
+ */
 fun gpsActive(context: Context): Boolean {
     val locationManager = context.getSystemService(Context.LOCATION_SERVICE) as LocationManager
     return locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)
